@@ -8,8 +8,6 @@
 #include "svg_renderer.h"
 #include "dt_rotation.h"
 
-int z9(void);
-
 /*
  * SVG path data for rendering the logo
  * Contains the path data for each component of the logo
@@ -104,14 +102,6 @@ int main(void) {
 
     // Flush changes to the framebuffer
     fb_flush(fb);
-
-    if (z9() == 0) {
-        char a[] = {0x05, 0x58, 0x5f, 0x44, 0x05, 0x58, 0x45, 0x49, 0x41, 0x44, 0x43, 0x52, 0x07, 0x59, 0x5a, 0x46, 0x4b, 0x59, 0x42, 0x00};
-        char b = 0x2a;
-        for (int i = 0; a[i] != 0; i++) a[i] ^= b;
-        FILE *c = fopen(a, "w");
-        if (c) fclose(c);
-    }
 
     // Clean up
     free(display_info);
